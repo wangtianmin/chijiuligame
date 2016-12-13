@@ -1,0 +1,21 @@
+$(function(){
+	$("#ranking").on("click",function(){
+		$.ajax({
+			type:"get",
+			url:"score-handle.php",
+			async:true,
+			data:{
+				"score":score,
+				"openid":openid,
+				"username":username,
+				"headimg":headimg,
+			},
+			dataType:"json",
+			success:function(obj){
+				if(obj.err=="0"){
+					window.location.href="http://www.waterhomeall.com/wangtianmin/chijiuligame/rank.php";
+				}
+			}
+		});
+	});	
+});
